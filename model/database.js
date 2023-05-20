@@ -19,10 +19,10 @@ con.connect(function (err) {
   console.log("Connected!");
 
   let sql =
-    "CREATE TABLE `ChocOfMonth`(`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `description` LONGTEXT NOT NULL, `description_GER` LONGTEXT NOT NULL, `description_FR` LONGTEXT NOT NULL, `menu_id` INT NOT NULL, PRIMARY KEY(`id`)); CREATE TABLE `menu`(`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `item_name` VARCHAR(255) NOT NULL, `item_name_GER` VARCHAR(255) NOT NULL, `item_name_FR` VARCHAR(255) NOT NULL, `ingredients` TEXT NOT NULL, `ingredients_GER` TEXT NOT NULL, `ingredients_FR` TEXT NOT NULL, `price` TINYINT NOT NULL, `isWarmBeverage` TINYINT(1) NOT NULL, `isColdBeverage` TINYINT(1) NOT NULL, `isAlcoholicBeverage` TINYINT(1) NOT NULL, `isLunch` TINYINT(1) NOT NULL, `isDessert` TINYINT(1) NOT NULL, `image_source` VARCHAR(255) NOT NULL, PRIMARY KEY(`id`)); ALTER TABLE `ChocOfMonth` ADD CONSTRAINT `chocofmonth_menu_id_foreign` FOREIGN KEY(`menu_id`) REFERENCES `menu`(`id`);";
+    "DROP TABLE if exists ChocOfMonth; DROP TABLE if exists menu; CREATE TABLE `ChocOfMonth`(`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `description` LONGTEXT NOT NULL, `description_GER` LONGTEXT NOT NULL, `description_FR` LONGTEXT NOT NULL, `menu_id` INT NOT NULL, PRIMARY KEY(`id`)); CREATE TABLE `menu`(`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `item_name` VARCHAR(255) NOT NULL, `item_name_GER` VARCHAR(255) NOT NULL, `item_name_FR` VARCHAR(255) NOT NULL, `ingredients` TEXT NOT NULL, `ingredients_GER` TEXT NOT NULL, `ingredients_FR` TEXT NOT NULL, `price` TINYINT NOT NULL, `isWarmBeverage` TINYINT(1) NOT NULL, `isColdBeverage` TINYINT(1) NOT NULL, `isAlcoholicBeverage` TINYINT(1) NOT NULL, `isLunch` TINYINT(1) NOT NULL, `isDessert` TINYINT(1) NOT NULL, `image_source` VARCHAR(255) NOT NULL, PRIMARY KEY(`id`));";
   con.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("Table creation `students` was successful!");
+    console.log("Table creation `ChocOfMonth` and `menu` was successful!");
 
     console.log("Closing...");
   });
