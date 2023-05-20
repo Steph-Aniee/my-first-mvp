@@ -10,17 +10,17 @@ const con = mysql.createConnection({
   host: DB_HOST || "127.0.0.1",
   user: DB_USER || "root",
   password: DB_PASS,
-  database: DB_NAME || "facebook",
-  multipleStatements: true
+  database: DB_NAME || "mad_chocoholic",
+  multipleStatements: true,
 });
 
-con.connect(function(err) {
+con.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");
 
   let sql =
-    "DROP TABLE if exists students; CREATE TABLE students(id INT NOT NULL AUTO_INCREMENT, firstname VARCHAR(40) not null, lastname VARCHAR(40) not null, PRIMARY KEY (id));";
-  con.query(sql, function(err, result) {
+    "CREATE TABLE `ChocOfMonth`(`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `description` LONGTEXT NOT NULL, `description_GER` LONGTEXT NOT NULL, `description_FR` LONGTEXT NOT NULL, `menu_id` INT NOT NULL, PRIMARY KEY(`id`)); CREATE TABLE `menu`(`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `item_name` VARCHAR(255) NOT NULL, `item_name_GER` VARCHAR(255) NOT NULL, `item_name_FR` VARCHAR(255) NOT NULL, `ingredients` TEXT NOT NULL, `ingredients_GER` TEXT NOT NULL, `ingredients_FR` TEXT NOT NULL, `price` TINYINT NOT NULL, `isWarmBeverage` TINYINT(1) NOT NULL, `isColdBeverage` TINYINT(1) NOT NULL, `isAlcoholicBeverage` TINYINT(1) NOT NULL, `isLunch` TINYINT(1) NOT NULL, `isDessert` TINYINT(1) NOT NULL, `image_source` VARCHAR(255) NOT NULL, PRIMARY KEY(`id`)); ALTER TABLE `ChocOfMonth` ADD CONSTRAINT `chocofmonth_menu_id_foreign` FOREIGN KEY(`menu_id`) REFERENCES `menu`(`id`);";
+  con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("Table creation `students` was successful!");
 
