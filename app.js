@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, "public"))); //not using public folder
 
-app.use("/api", menuRouter);
-app.use("/api/choc_of_month", chocoMoRouter);
+app.use("/", menuRouter);
+app.use("/", chocoMoRouter);
 
 module.exports = app;
