@@ -4,8 +4,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const cors = require("cors");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users"); //can rename here
+var menuRouter = require("./routes/menu_items");
+var chocoMoRouter = require("./routes/choc_of_month");
 
 var app = express();
 
@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, "public"))); //not using public folder
 
-app.use("/api", indexRouter);
-app.use("/api/users", usersRouter); //can rename here too instead of users
+app.use("/api", menuRouter);
+app.use("/api/choc_of_month", chocoMoRouter);
 
 module.exports = app;
