@@ -28,10 +28,4 @@ router.get("/:id", async function (req, res, next) {
   }
 });
 
-/* POST choc of the month. */
-
-/* DELETE choc of the month. */
-
-/* PUT choc of the month. */
-
 module.exports = router;
