@@ -1,5 +1,7 @@
 var express = require("express");
 var router = express.Router();
+const db = require("../model/helper");
+var createError = require("http-errors");
 
 /* GET menu items. */
 router.get("/", async function (req, res, next) {
@@ -15,7 +17,5 @@ router.get("/", async function (req, res, next) {
 /* DELETE menu items. */
 
 /* PUT menu items. */
-
-/* PUT only DATE of menu items. */
 
 module.exports = router;
