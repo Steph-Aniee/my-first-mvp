@@ -7,7 +7,7 @@ var createError = require("http-errors");
 router.get("/", async function (req, res, next) {
   try {
     const results = await db(
-      "SELECT c.menu_id, c.description, c.description_GER, c.description_FR, m.image_source FROM ChocOfMonth as c LEFT JOIN menu as m ON c.menu_id = m.id ORDER BY c.menu_id ASC;"
+      "SELECT c.id, c.menu_id, c.description, c.description_GER, c.description_FR, m.image_source FROM ChocOfMonth as c LEFT JOIN menu as m ON c.menu_id = m.id ORDER BY c.menu_id ASC;"
     );
     res.send(results.data);
   } catch (err) {
@@ -20,7 +20,7 @@ router.get("/:id", async function (req, res, next) {
   try {
     const menuID = req.params.id;
     const results = await db(
-      `SELECT c.menu_id, c.description, c.description_GER, c.description_FR, m.image_source FROM ChocOfMonth as c LEFT JOIN menu as m ON c.menu_id = m.id WHERE ${menuID} = c.menu_id;`
+      `SELECT c.id, c.menu_id, c.description, c.description_GER, c.description_FR, m.image_source FROM ChocOfMonth as c LEFT JOIN menu as m ON c.menu_id = m.id WHERE ${menuID} = c.menu_id;`
     );
     res.send(results.data);
   } catch (err) {
