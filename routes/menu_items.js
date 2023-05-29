@@ -28,7 +28,7 @@ router.get("/:id", async function (req, res, next) {
 router.post("/", async function (req, res, next) {
   try {
     // Insert menu item and get the generated id
-    const addingMenu = await db(
+    await db(
       `INSERT INTO menu (item_name, item_name_GER, item_name_FR, ingredients, ingredients_GER, ingredients_FR, price, isWarmBeverage, isColdBeverage, isAlcoholicBeverage, isLunch, isDessert, image_source, date) VALUES ('${req.body.item_name}','${req.body.item_name_GER}', '${req.body.item_name_FR}', '${req.body.ingredients}', '${req.body.ingredients_GER}', '${req.body.ingredients_FR}', '${req.body.price}', '${req.body.isWarmBeverage}', '${req.body.isColdBeverage}', '${req.body.isAlcoholicBeverage}', '${req.body.isLunch}', '${req.body.isDessert}', '${req.body.image_source}', '${req.body.date}');`
     );
 
@@ -39,9 +39,17 @@ router.post("/", async function (req, res, next) {
 
     const menuID = gettingID.data[0].id;
     // Insert into ChocOfMonth with the matching menu_id
-    await db(
+    const addingChocomo = await db(
       `INSERT INTO ChocOfMonth (description, description_GER, description_FR, menu_id) VALUES ('${req.body.description}','${req.body.description_GER}','${req.body.description_FR}', ${menuID});`
     );
+
+    if (!addingChocomo.ok) {
+      await db(`DELETE FROM menu WHERE id = ${menuID};`);
+      res.send({
+        message:
+          "Something went wrong with adding the choc of month descriptions.",
+      });
+    }
 
     // Fetch the updated data
     const response = await db(
@@ -57,10 +65,12 @@ router.post("/", async function (req, res, next) {
 router.delete("/:id", async function (req, res, next) {
   try {
     const menuID = req.params.id;
+
     //need too delete first choc of month data (because otherwise there will be an error if you try to delete the parent with the connecting key/id first)
     await db(`DELETE FROM ChocOfMonth WHERE menu_id = ${menuID};`);
     // then we can delete the rest of the menu item
     await db(`DELETE FROM menu WHERE id = ${menuID};`);
+
     //and finally send back the updated items and choc of month data in the response
     const results = await db(
       `SELECT * FROM menu LEFT JOIN ChocOfMonth ON menu.id = chocofmonth.menu_id;`

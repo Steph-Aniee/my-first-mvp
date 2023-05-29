@@ -5,7 +5,7 @@ var logger = require("morgan");
 const cors = require("cors");
 
 var menuRouter = require("./routes/menu_items");
-var chocoMoRouter = require("./routes/choc_of_month");
+/* var chocoMoRouter = require("./routes/choc_of_month"); */
 
 var app = express();
 
@@ -17,6 +17,6 @@ app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, "public"))); //not using public folder
 
 app.use("/api/menu", menuRouter);
-app.use("/api/chocomo", chocoMoRouter);
+/* app.use("/api/chocomo", chocoMoRouter); //droped this appraoch with two tables in the DB */
 
 module.exports = app;
