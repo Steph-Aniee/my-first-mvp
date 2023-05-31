@@ -1,12 +1,138 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
+import Add_Item from "./components/Add_Item";
+import Edit_Item from "./components/Edit_Item";
+import Delete_Item from "./components/Delete_Item";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [adminPage, setAdminPage] = useState(true);
+  const [itemsOverView, setItemsOverview] = useState([]);
+  const [item, setItem] = useState("");
+
+  useEffect(() => {
+    fetchAllItems();
+  }, []);
+
+  const fetchAllItems = async () => {
+    try {
+      const response = await fetch("/api/menu");
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+      const data = await response.json();
+      setItemsOverview(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const addItem = () => {
+    setItem("adding");
+    setAdminPage(false);
+  };
+
+  const editItem = () => {
+    setItem("editing");
+    setAdminPage(false);
+  };
+
+  const deleteItem = () => {
+    setItem("deleting");
+    setAdminPage(false);
+  };
+
+  const cellStyleURL = {
+    maxWidth: "10em",
+    overflow: "auto",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
+  };
+
+  function formatDate(sqlDate) {
+    const dateObj = new Date(sqlDate);
+    const year = dateObj.getFullYear();
+    const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+    const day = String(dateObj.getDate()).padStart(2, "0");
+    const formattedDate = `${day}-${month}-${year}`;
+    return formattedDate;
+  }
 
   return (
     <>
-      <div>Test</div>
+      {adminPage === true && (
+        <div>
+          Admin-Page
+          <div className="table-responsive">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Item Name</th>
+                  <th>Item Name GER</th>
+                  <th>Item Name FR</th>
+                  <th>Ingredients</th>
+                  <th>Ingredients GER</th>
+                  <th>Ingredients FR</th>
+                  <th>Description</th>
+                  <th>Description GER</th>
+                  <th>Description FR</th>
+                  <th>Price</th>
+                  <th>Type</th>
+                  <th>Image Source</th>
+                  <th>Choc of Month</th>
+                </tr>
+              </thead>
+              <tbody>
+                {itemsOverView ? (
+                  itemsOverView.map((menu) => (
+                    <tr key={menu.id}>
+                      <td>{menu.id}</td>
+                      <td>{menu.item_name}</td>
+                      <td>{menu.item_name_GER}</td>
+                      <td>{menu.item_name_FR}</td>
+                      <td>{menu.ingredients}</td>
+                      <td>{menu.ingredients_GER}</td>
+                      <td>{menu.ingredients_FR}</td>
+                      <td>{menu.description}</td>
+                      <td>{menu.description_GER}</td>
+                      <td>{menu.description_FR}</td>
+                      <td>{menu.price.toFixed(2)}€</td>
+                      <td>
+                        {menu.isWarmBeverage ? "Warm beverage" : null}
+                        {menu.isColdBeverage ? "Cold beverage" : null}
+                        {menu.isAlcoholicBeverage ? "Alcoholic beverage" : null}
+                        {menu.isLunch ? "Lunch" : null}
+                        {menu.isDessert ? "Dessert" : null}
+                      </td>
+                      <td style={cellStyleURL}>{menu.image_source}</td>
+                      <td>{formatDate(`${menu.date}`)}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="3">
+                      ... the server is trying to get what you need from the
+                      database!
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+          <button type="button" onClick={addItem}>
+            Add a New Item
+          </button>
+          <button type="button" onClick={editItem}>
+            Edit an Item
+          </button>
+          <button type="button" onClick={deleteItem}>
+            Delete an Item
+          </button>
+        </div>
+      )}
+      {item === "adding" && <Add_Item></Add_Item>}
+      {item === "editing" && <Edit_Item></Edit_Item>}
+      {item === "deleting" && <Delete_Item></Delete_Item>}
     </>
   );
 }
