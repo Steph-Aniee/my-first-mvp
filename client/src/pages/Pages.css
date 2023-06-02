@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0 auto;
+}
+
+body {
+  background-color: rgb(228, 187, 150);
+}
+
+.lang-buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5%;
+}
+
+.german {
+  border: none;
+  background-color: transparent;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(228, 187, 150, 0.9);
+}
+
+.english {
+  border: none;
+  background-color: transparent;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(228, 187, 150, 0.9);
+}
+
+.french {
+  border: none;
+  background-color: transparent;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(228, 187, 150, 0.9);
+}
+
+h1 {
+  font-family: "Tangerine", cursive;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: rgb(228, 187, 150);
+  padding: 2%;
+}
+
+.top {
+  background-color: #7b3f00;
+}
+
+.below {
+  background-color: rgb(228, 187, 150);
+}
+
+.nav.nav-tabs {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-color: rgb(228, 187, 150);
+  justify-content: flex-start;
+}
+
+.nav.nav-tabs li {
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+}
+
+.nav.nav-tabs li .nav-link {
+  text-decoration: none;
+  color: rgba(228, 187, 150, 0.9);
+  border-color: transparent;
+}
+
+.nav.nav-tabs li .nav-link.active {
+  color: #7b3f00;
+  background-color: rgb(228, 187, 150);
+  border-color: transparent;
+}
+
+/* GoHome Styles */
+
+h2 {
+  display: flex;
+  font-family: "Tangerine", cursive;
+  padding-top: 2%;
+  justify-content: center;
+  color: #7b3f00;
+  font-weight: 700;
+  font-size: 40px;
+  margin: 3%;
+}
+
+.card {
+  width: 40%;
+  color: #7b3f00;
+  background-color: rgb(228, 187, 150);
+  border: transparent;
+  font-family: "Montserrat", sans-serif;
+  text-align: justify;
+}
+
+img.card-img-top {
+  opacity: 85%;
+  filter: brightness(120%);
+}
+
+h6.card-title {
+  padding-top: 2%;
+  text-align: center;
+}
+
+div.card-body {
+  padding: 0;
+}
+
+/* for the admin-area*/
+
+div.adminArea {
+  color: #d4648f;
+  font-family: "Montserrat", sans-serif;
+  background-color: white;
+}
+
+.addHeadline {
+  color: #d4648f;
+}
+
+.table-responsive {
+  background-color: rgb(255, 251, 255);
+}
+
+th {
+  max-width: max-content;
+}
+
+.addBtn {
+  margin: 2%;
+  border: none;
+  border-radius: 20px;
+  background-color: #d4648f;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addBtn:hover {
+  background-color: #eb8aaf;
+}
+
+.editBtn {
+  margin: 2%;
+  border: none;
+  border-radius: 20px;
+  background-color: #b1571b;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.editBtn:hover {
+  background-color: #b67e58;
+}
+
+.deleteBtn {
+  margin: 2%;
+  border: none;
+  border-radius: 20px;
+  background-color: #8f0d0d;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.deleteBtn:hover {
+  background-color: #913c3c;
+}
+
+.addForm {
+  margin: 0 2%;
+}
+
+.editArea {
+  background-color: white;
+  color: #d4648f;
+}
+
+.editForm {
+  margin: 0 2%;
+}
+
+.editArea label {
+  margin: 0.5%;
+}
+
+.editArea input {
+  margin-right: 40px;
+}
+
+.editArea select {
+  margin: 0.5%;
+}
+
+.deleteArea {
+  background-color: white;
+  color: #d4648f;
+}
+
+.deleteForm {
+  margin: 0 2%;
+  color: black;
+}

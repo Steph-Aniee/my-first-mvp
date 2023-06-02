@@ -109,12 +109,14 @@ export default function Add_Item() {
   };
 
   return (
-    <div>
+    <div className="adminArea">
       <div>
-        <h1>Adding a new item...</h1>
-        <p>To add a new item, please fill out the entire form</p>
+        <h1 className="addHeadline">Adding a new item...</h1>
+        <p style={{ paddingLeft: "2%" }}>
+          To add a new item, please fill out the entire form
+        </p>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form className="addForm" onSubmit={handleSubmit}>
         <label>
           Item Name:
           <input
@@ -265,10 +267,28 @@ export default function Add_Item() {
             onChange={(e) => setDate(e.target.value)}
           />
         </label>
-        <button type="submit">Add Item</button>
+        <button
+          style={{
+            margin: "2% auto 0 2%",
+            justifyContent: "center",
+            backgroundColor: "#c7ecc8",
+          }}
+          type="submit"
+        >
+          Add Item
+        </button>
       </form>
       <Link to="/admin">
-        <button type="button">Back to the Overview</button>{" "}
+        <button
+          style={{
+            margin: "2% auto 40% 2%",
+            justifyContent: "center",
+            backgroundColor: "#e9c2d1",
+          }}
+          type="button"
+        >
+          Back to the Overview
+        </button>
       </Link>
     </div>
   );

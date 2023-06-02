@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import "./App.css";
 import Add_Item from "./components/Add_Item";
 import Edit_Item from "./components/Edit_Item";
@@ -13,7 +12,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<GoHome />} />
+        <Route path="/" element={<GoHome />} exact />
         <Route path="/visit-the-cafe" element={<Visit_the_Cafe />} />
         <Route path="/menu" element={<GoMenu />} />
         <Route path="/admin" element={<Admin />} />

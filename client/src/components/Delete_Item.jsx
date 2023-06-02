@@ -48,37 +48,77 @@ export default function Delete_Item() {
   };
 
   return (
-    <div>
-      <h1>Delete Item</h1>
-      {item.length < 1 ? (
-        <form onSubmit={handleSubmit}>
-          <label>
-            Enter Item ID:
-            <input type="text" value={itemId} onChange={handleIdChange} />
-          </label>
-          <button type="submit">Submit</button>
-        </form>
-      ) : (
-        <>
-          <p>Item ID: {item[0].id}</p>
-          <p>Item Name: {item[0].item_name}</p>
-          {!confirmDelete ? (
-            <>
-              <p>Are you sure you want to delete this item?</p>
-              <button onClick={() => setConfirmDelete(true)}>Yes</button>
-              <button onClick={() => setItem([])}>No</button>
-            </>
-          ) : (
-            <>
-              <p>Deleting item...</p>
-              <button onClick={handleConfirmDelete}>Confirm Delete</button>
-            </>
-          )}
-        </>
-      )}
-      <Link to="/admin">
-        <button type="button">Back to the Overview</button>{" "}
-      </Link>
+    <div lassName="adminArea">
+      <div className="deleteArea">
+        <h1 className="addHeadline">Delete Item</h1>
+        {item.length < 1 ? (
+          <form className="deleteForm" onSubmit={handleSubmit}>
+            <label>
+              Enter Item ID:{" "}
+              <input type="text" value={itemId} onChange={handleIdChange} />
+            </label>
+            <button
+              style={{
+                marginLeft: "2%",
+              }}
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        ) : (
+          <>
+            <div className="deleteForm">
+              <p>
+                Item ID: <strong>{item[0].id}</strong>
+              </p>
+              <p>
+                Item Name: <strong>{item[0].item_name}</strong>
+              </p>
+              {!confirmDelete ? (
+                <>
+                  <p>Are you sure you want to delete this item?</p>
+                  <button
+                    style={{
+                      margin: "0 2% 2% 0",
+                      justifyContent: "center",
+                      backgroundColor: "#c7ecc8",
+                    }}
+                    onClick={() => setConfirmDelete(true)}
+                  >
+                    Yes
+                  </button>
+                  <button
+                    style={{
+                      backgroundColor: "#ee9f9f",
+                    }}
+                    onClick={() => setItem([])}
+                  >
+                    No
+                  </button>
+                </>
+              ) : (
+                <>
+                  <p>Deleting item...</p>
+                  <button onClick={handleConfirmDelete}>Confirm Delete</button>
+                </>
+              )}
+            </div>
+          </>
+        )}
+        <Link to="/admin">
+          <button
+            style={{
+              margin: "2% auto 80% 2%",
+              justifyContent: "center",
+              backgroundColor: "#e9c2d1",
+            }}
+            type="button"
+          >
+            Back to the Overview
+          </button>{" "}
+        </Link>
+      </div>
     </div>
   );
 }

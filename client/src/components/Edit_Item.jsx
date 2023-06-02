@@ -111,7 +111,9 @@ export default function Edit_Item() {
       setItemId("");
     } catch (error) {
       console.error(error);
-      alert("Failed to update item");
+      alert(
+        "Failed to update item! Please check for single-apostrophes in French text."
+      );
     }
   };
 
@@ -141,201 +143,234 @@ export default function Edit_Item() {
   };
 
   return (
-    <div>
-      <h1>Edit Item</h1>
-      {item.length < 1 ? (
-        <form onSubmit={handleSubmit}>
-          <label>
-            Enter Item ID:
-            <input type="text" value={itemId} onChange={handleIdChange} />
-          </label>
-          <button type="submit">Submit</button>
-        </form>
-      ) : (
-        <form onSubmit={handleUpdateItem}>
-          <label>
-            Item Name:
-            <input
-              type="text"
-              name="item_name"
-              value={editedItem.item_name}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Item Name (German):
-            <input
-              type="text"
-              name="item_name_GER"
-              value={editedItem.item_name_GER}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Item Name (French):
-            <input
-              type="text"
-              name="item_name_FR"
-              value={editedItem.item_name_FR}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Ingredients:
-            <input
-              type="text"
-              name="ingredients"
-              value={editedItem.ingredients}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Ingredients (German):
-            <input
-              type="text"
-              name="ingredients_GER"
-              value={editedItem.ingredients_GER}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Ingredients (French):
-            <input
-              type="text"
-              name="ingredients_FR"
-              value={editedItem.ingredients_FR}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Price:
-            <input
-              type="number"
-              name="price"
-              value={editedItem.price}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Warm beverage?
-            <select
-              name="isWarmBeverage"
-              value={editedItem.isWarmBeverage}
-              onChange={handleChange}
+    <div lassName="adminArea">
+      <div className="editArea">
+        <h1 className="addHeadline">Edit Item</h1>
+        {item.length < 1 ? (
+          <form onSubmit={handleSubmit}>
+            <label
+              style={{
+                margin: "0 0 4% 2%",
+                justifyContent: "center",
+                color: "black",
+              }}
             >
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
-          </label>
-          <label>
-            Cold Beverage?
-            <select
-              name="isColdBeverage"
-              value={editedItem.isColdBeverage}
-              onChange={handleChange}
+              Enter Item ID:{"  "}
+              <input type="text" value={itemId} onChange={handleIdChange} />
+            </label>
+            <button type="submit">Submit</button>
+          </form>
+        ) : (
+          <form className="editForm" onSubmit={handleUpdateItem}>
+            <label>
+              Item Name:
+              <input
+                type="text"
+                name="item_name"
+                value={editedItem.item_name}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Item Name (German):
+              <input
+                type="text"
+                name="item_name_GER"
+                value={editedItem.item_name_GER}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Item Name (French):
+              <input
+                type="text"
+                name="item_name_FR"
+                value={editedItem.item_name_FR}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Ingredients:
+              <input
+                type="text"
+                name="ingredients"
+                value={editedItem.ingredients}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Ingredients (German):
+              <input
+                type="text"
+                name="ingredients_GER"
+                value={editedItem.ingredients_GER}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Ingredients (French):
+              <input
+                type="text"
+                name="ingredients_FR"
+                value={editedItem.ingredients_FR}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Price:
+              <input
+                type="number"
+                name="price"
+                value={editedItem.price}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Warm beverage?
+              <select
+                name="isWarmBeverage"
+                value={editedItem.isWarmBeverage}
+                onChange={handleChange}
+              >
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+            </label>
+            <label>
+              Cold Beverage?
+              <select
+                name="isColdBeverage"
+                value={editedItem.isColdBeverage}
+                onChange={handleChange}
+              >
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+            </label>
+            <label>
+              Alcoholic beverage?
+              <select
+                name="isAlcoholicBeverage"
+                value={editedItem.isAlcoholicBeverage}
+                onChange={handleChange}
+              >
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+            </label>
+            <label>
+              Lunch?
+              <select
+                name="isLunch"
+                value={editedItem.isLunch}
+                onChange={handleChange}
+              >
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+            </label>
+            <label>
+              Dessert?
+              <select
+                name="isDessert"
+                value={editedItem.isDessert}
+                onChange={handleChange}
+              >
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+            </label>
+            <label>
+              Choc of Month?
+              <select
+                name="isChocOfMonth"
+                value={editedItem.isChocOfMonth}
+                onChange={handleChange}
+              >
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+            </label>
+            <label>
+              Description:
+              <input
+                type="text"
+                name="description"
+                value={editedItem.description}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Description (German):
+              <input
+                type="text"
+                name="description_GER"
+                value={editedItem.description_GER}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Description (French):
+              <input
+                type="text"
+                name="description_FR"
+                value={editedItem.description_FR}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Image Source:
+              <input
+                type="text"
+                name="image_source"
+                value={editedItem.image_source}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Date:
+              <input
+                type="text"
+                name="date"
+                value={editedItem.date}
+                onChange={handleChange}
+              />
+            </label>
+            <button
+              style={{
+                margin: "auto 2% 0 2%",
+                justifyContent: "center",
+                backgroundColor: "#c7ecc8",
+              }}
+              type="submit"
             >
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
-          </label>
-          <label>
-            Alcoholic beverage?
-            <select
-              name="isAlcoholicBeverage"
-              value={editedItem.isAlcoholicBeverage}
-              onChange={handleChange}
+              Update Item
+            </button>
+            <button
+              style={{
+                justifyContent: "center",
+                backgroundColor: "#ee9f9f",
+              }}
+              type="button"
+              onClick={handleCancel}
             >
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
-          </label>
-          <label>
-            Lunch?
-            <select
-              name="isLunch"
-              value={editedItem.isLunch}
-              onChange={handleChange}
-            >
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
-          </label>
-          <label>
-            Dessert?
-            <select
-              name="isDessert"
-              value={editedItem.isDessert}
-              onChange={handleChange}
-            >
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
-          </label>
-          <label>
-            Choc of Month?
-            <select
-              name="isChocOfMonth"
-              value={editedItem.isChocOfMonth}
-              onChange={handleChange}
-            >
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
-          </label>
-          <label>
-            Description:
-            <input
-              type="text"
-              name="description"
-              value={editedItem.description}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Description (German):
-            <input
-              type="text"
-              name="description_GER"
-              value={editedItem.description_GER}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Description (French):
-            <input
-              type="text"
-              name="description_FR"
-              value={editedItem.description_FR}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Image Source:
-            <input
-              type="text"
-              name="image_source"
-              value={editedItem.image_source}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Date:
-            <input
-              type="text"
-              name="date"
-              value={editedItem.date}
-              onChange={handleChange}
-            />
-          </label>
-          <button type="submit">Update Item</button>
-          <button type="button" onClick={handleCancel}>
-            Cancel
-          </button>
-        </form>
-      )}
-      <Link to="/admin">
-        <button type="button">Back to the Overview</button>{" "}
-      </Link>
+              Cancel
+            </button>
+          </form>
+        )}
+        <Link to="/admin">
+          <button
+            style={{
+              margin: "2% auto 80% 2%",
+              justifyContent: "center",
+              backgroundColor: "#e9c2d1",
+            }}
+            type="button"
+          >
+            Back to the Overview
+          </button>{" "}
+        </Link>
+      </div>
     </div>
   );
 }

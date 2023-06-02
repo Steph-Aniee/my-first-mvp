@@ -21,6 +21,12 @@ export default function Admin() {
     }
   };
 
+  const thStyle = {
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  };
+
   const cellStyleURL = {
     maxWidth: "10em",
     overflow: "auto",
@@ -38,27 +44,29 @@ export default function Admin() {
   }
 
   return (
-    <div>
-      <h1>Welcome, Mad Chocoholic!</h1>
-      <p>This is your current selection of high-class chocolate treats:</p>
+    <div className="adminArea">
+      <h1 className="addHeadline">Welcome, Mad Chocoholic!</h1>
+      <p style={{ paddingLeft: "1%" }}>
+        This is your current selection of high-class chocolate treats:
+      </p>
       <div className="table-responsive">
         <table className="table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Item Name</th>
-              <th>Item Name GER</th>
-              <th>Item Name FR</th>
-              <th>Ingredients</th>
-              <th>Ingredients GER</th>
-              <th>Ingredients FR</th>
-              <th>Description</th>
-              <th>Description GER</th>
-              <th>Description FR</th>
-              <th>Price</th>
-              <th>Type</th>
-              <th>Image Source</th>
-              <th>Choc of Month</th>
+              <th style={thStyle}>ID</th>
+              <th style={thStyle}>Item Name</th>
+              <th style={thStyle}>Item Name GER</th>
+              <th style={thStyle}>Item Name FR</th>
+              <th style={thStyle}>Ingredients</th>
+              <th style={thStyle}>Ingredients GER</th>
+              <th style={thStyle}>Ingredients FR</th>
+              <th style={thStyle}>Description</th>
+              <th style={thStyle}>Description GER</th>
+              <th style={thStyle}>Description FR</th>
+              <th style={thStyle}>Price</th>
+              <th style={thStyle}>Type</th>
+              <th style={thStyle}>Image Source</th>
+              <th style={thStyle}>Choc of Month</th>
             </tr>
           </thead>
           <tbody>
@@ -99,13 +107,19 @@ export default function Admin() {
         </table>
       </div>
       <Link to="/add">
-        <button type="button">Add a New Item</button>
+        <button className="addBtn" type="button">
+          Add a New Item
+        </button>
       </Link>
       <Link to="/edit">
-        <button type="button">Edit an Item</button>
+        <button className="editBtn" type="button">
+          Edit an Item
+        </button>
       </Link>
       <Link to="/delete">
-        <button type="button">Delete an Item</button>
+        <button className="deleteBtn" type="button">
+          Delete an Item
+        </button>
       </Link>
     </div>
   );
