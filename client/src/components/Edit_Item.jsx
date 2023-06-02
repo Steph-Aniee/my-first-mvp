@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 export default function Edit_Item() {
   const [itemId, setItemId] = useState("");
@@ -332,6 +333,9 @@ export default function Edit_Item() {
           </button>
         </form>
       )}
+      <Link to="/admin">
+        <button type="button">Back to the Overview</button>{" "}
+      </Link>
     </div>
   );
 }

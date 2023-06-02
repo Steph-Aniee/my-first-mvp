@@ -4,39 +4,23 @@ import Add_Item from "./components/Add_Item";
 import Edit_Item from "./components/Edit_Item";
 import Delete_Item from "./components/Delete_Item";
 import Admin from "./components/Admin";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+import GoHome from "./pages/GoHome";
+import Visit_the_Cafe from "./pages/Visit_the_Cafe";
+import GoMenu from "./pages/GoMenu";
 
 function App() {
-  const [adminPage, setAdminPage] = useState(true);
-  const [item, setItem] = useState("");
-
-  const changeView = () => {
-    setAdminPage(true);
-    setItem("");
-  };
-
   return (
     <>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<GoHome />} />
         <Route path="/visit-the-cafe" element={<Visit_the_Cafe />} />
-        <Route path="/menu" element={<Menu />} />
-        {/*         <Route
-          path="*"
-          element={<Admin setAdminPage={setAdminPage} setItem={setItem} />}
-        /> */}
+        <Route path="/menu" element={<GoMenu />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/edit" element={<Edit_Item />} />
+        <Route path="/add" element={<Add_Item />} />
+        <Route path="/delete" element={<Delete_Item />} />
       </Routes>
-      ;
-      {adminPage === true && (
-        <Admin setAdminPage={setAdminPage} setItem={setItem} />
-      )}
-      {item === "adding" && <Add_Item></Add_Item>}
-      {item === "editing" && <Edit_Item></Edit_Item>}
-      {item === "deleting" && <Delete_Item></Delete_Item>}
-      {!adminPage && (
-        <button type="button" onClick={changeView}>
-          Back to the Overview
-        </button>
-      )}
     </>
   );
 }

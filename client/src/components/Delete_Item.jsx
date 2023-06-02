@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 export default function Delete_Item() {
   const [itemId, setItemId] = useState("");
@@ -75,6 +76,9 @@ export default function Delete_Item() {
           )}
         </>
       )}
+      <Link to="/admin">
+        <button type="button">Back to the Overview</button>{" "}
+      </Link>
     </div>
   );
 }

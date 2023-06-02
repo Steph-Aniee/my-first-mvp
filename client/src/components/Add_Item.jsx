@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 export default function Add_Item() {
   const [itemName, setItemName] = useState("");
@@ -266,6 +267,9 @@ export default function Add_Item() {
         </label>
         <button type="submit">Add Item</button>
       </form>
+      <Link to="/admin">
+        <button type="button">Back to the Overview</button>{" "}
+      </Link>
     </div>
   );
 }

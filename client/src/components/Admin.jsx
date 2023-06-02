@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 
-export default function Admin(props) {
-  const { setItem, setAdminPage } = props;
-
+export default function Admin() {
   const [itemsOverView, setItemsOverview] = useState([]);
 
   useEffect(() => {
@@ -20,21 +19,6 @@ export default function Admin(props) {
     } catch (error) {
       console.error(error);
     }
-  };
-
-  const addItem = () => {
-    setItem("adding");
-    setAdminPage(false);
-  };
-
-  const editItem = () => {
-    setItem("editing");
-    setAdminPage(false);
-  };
-
-  const deleteItem = () => {
-    setItem("deleting");
-    setAdminPage(false);
   };
 
   const cellStyleURL = {
@@ -114,15 +98,15 @@ export default function Admin(props) {
           </tbody>
         </table>
       </div>
-      <button type="button" onClick={addItem}>
-        Add a New Item
-      </button>
-      <button type="button" onClick={editItem}>
-        Edit an Item
-      </button>
-      <button type="button" onClick={deleteItem}>
-        Delete an Item
-      </button>
+      <Link to="/add">
+        <button type="button">Add a New Item</button>
+      </Link>
+      <Link to="/edit">
+        <button type="button">Edit an Item</button>
+      </Link>
+      <Link to="/delete">
+        <button type="button">Delete an Item</button>
+      </Link>
     </div>
   );
 }
