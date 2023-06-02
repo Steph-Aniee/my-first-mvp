@@ -16,6 +16,16 @@ function App() {
 
   return (
     <>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/visit-the-cafe" element={<Visit_the_Cafe />} />
+        <Route path="/menu" element={<Menu />} />
+        {/*         <Route
+          path="*"
+          element={<Admin setAdminPage={setAdminPage} setItem={setItem} />}
+        /> */}
+      </Routes>
+      ;
       {adminPage === true && (
         <Admin setAdminPage={setAdminPage} setItem={setItem} />
       )}
