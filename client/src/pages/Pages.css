@@ -129,6 +129,16 @@ div.card-body {
   padding: 0;
 }
 
+/* Visit the Café Styles */
+
+.aboutPage {
+  display: flex;
+  margin: 2% 20%;
+  text-align: justify;
+  color: #7b3f00;
+  font-weight: 450;
+}
+
 /* for the admin-area*/
 
 div.adminArea {

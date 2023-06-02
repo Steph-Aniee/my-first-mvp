@@ -68,7 +68,9 @@ export default function GoHome() {
                 activeclassname="active"
                 className="nav-link"
               >
-                Visit the Café
+                {language === "en" && `Visit the Café`}
+                {language === "de" && `Besuchen Sie uns`}
+                {language === "fr" && `Visitez le Café`}
               </NavLink>
             </li>
           </ul>
@@ -85,6 +87,7 @@ export default function GoHome() {
         ) : (
           <div className="card">
             <img
+              style={{ marginBottom: "2%" }}
               className="card-img-top"
               src={`${chocomo.image_source}`}
               alt={`${chocomo.item_name}`}

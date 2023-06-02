@@ -46,7 +46,9 @@ export default function GoMenu() {
                 activeclassname="active"
                 className="nav-link"
               >
-                Visit the Café
+                {language === "en" && `Visit the Café`}
+                {language === "de" && `Besuchen Sie uns`}
+                {language === "fr" && `Visitez le Café`}
               </NavLink>
             </li>
           </ul>
