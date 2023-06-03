@@ -139,6 +139,7 @@ h2 {
 img.card-img-top {
   opacity: 85%;
   filter: brightness(120%);
+  max-width: 20em;
 }
 
 h6.card-title {
@@ -148,6 +149,13 @@ h6.card-title {
 
 div.card-body {
   padding: 0;
+  max-width: 20em;
+}
+
+@media (min-width: 1200px) {
+  .below h2 {
+    margin: 0 2% 2% 1%;
+  }
 }
 
 /* Visit the Café Styles */
@@ -168,7 +176,8 @@ div.card-body {
 
 .aboutPage h6 {
   display: flex;
-  font-size: large;
+  font-size: x-large;
+  font-weight: 400;
   margin-top: 5%;
   width: 100%;
 }
@@ -185,7 +194,13 @@ div.card-body {
     max-height: 300px;
   }
   .aboutPage h6 {
-    font-size: 15px;
+    font-size: 16px;
+  }
+  .logo {
+    max-width: 1em;
+  }
+  h1 {
+    font-size: 24pt;
   }
 }
 

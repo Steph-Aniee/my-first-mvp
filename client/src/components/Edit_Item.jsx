@@ -143,7 +143,7 @@ export default function Edit_Item() {
   };
 
   return (
-    <div lassName="adminArea">
+    <div className="adminArea">
       <div className="editArea">
         <h1 className="addHeadline">Edit Item</h1>
         {item.length < 1 ? (
