@@ -74,6 +74,11 @@ h1 {
   padding: 2%;
 }
 
+.logo {
+  margin: 0 1%;
+  width: 2em;
+}
+
 .top {
   background-color: #7b3f00;
 }
@@ -128,6 +133,7 @@ h2 {
   border: transparent;
   font-family: "Montserrat", sans-serif;
   text-align: justify;
+  margin-bottom: 5%;
 }
 
 img.card-img-top {
