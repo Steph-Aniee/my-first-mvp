@@ -1,3 +1,5 @@
+import { ReactFragment } from "react";
+import React from "react";
 import { useEffect, useState } from "react";
 import { Routes, Route, Link, NavLink } from "react-router-dom";
 import Visit_the_Cafe from "./Visit_the_Cafe";
@@ -25,6 +27,29 @@ export default function GoHome({ language, onLanguageChange }) {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const addLink = (text) => {
+    const linkTexts = {
+      en: "click here",
+      de: "klicken Sie hier",
+      fr: "cliquez ici",
+    };
+    const link = (
+      <Link to="/menu" className="linkStyle">
+        {linkTexts[language]}
+      </Link>
+    );
+
+    const parts = text.split(linkTexts[language]);
+    const lastIndex = parts.length - 1;
+
+    return parts.map((part, index) => (
+      <React.Fragment key={index}>
+        {part}
+        {index !== lastIndex && link}
+      </React.Fragment>
+    ));
   };
 
   return (
@@ -103,9 +128,13 @@ export default function GoHome({ language, onLanguageChange }) {
                   (language === "fr" && `${chocomo.item_name_FR}`)}
               </h6>
               <p className="card-text">
-                {(language === "en" && `${chocomo.description}`) ||
-                  (language === "de" && `${chocomo.description_GER}`) ||
-                  (language === "fr" && `${chocomo.description_FR}`)}
+                {addLink(
+                  language === "en"
+                    ? chocomo.description
+                    : language === "de"
+                    ? chocomo.description_GER
+                    : chocomo.description_FR
+                )}
               </p>
             </div>
           </div>
