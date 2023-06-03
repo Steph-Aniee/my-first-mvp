@@ -3,14 +3,9 @@ import { Routes, Route, Link, NavLink } from "react-router-dom";
 import Visit_the_Cafe from "./Visit_the_Cafe";
 import GoMenu from "./GoMenu";
 
-export default function GoHome() {
-  const [language, setLanguage] = useState("en");
+export default function GoHome({ language, onLanguageChange }) {
   const [chocomo, setChocomo] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
-  const handleLanguageChange = (lang) => {
-    setLanguage(lang);
-  };
 
   useEffect(() => {
     fetchChocomo();
@@ -36,16 +31,13 @@ export default function GoHome() {
     <>
       <div className="top">
         <div className="lang-buttons">
-          <button className="german" onClick={() => handleLanguageChange("de")}>
+          <button className="german" onClick={() => onLanguageChange("de")}>
             Deutsch
           </button>
-          <button
-            className="english"
-            onClick={() => handleLanguageChange("en")}
-          >
+          <button className="english" onClick={() => onLanguageChange("en")}>
             English
           </button>
-          <button className="french" onClick={() => handleLanguageChange("fr")}>
+          <button className="french" onClick={() => onLanguageChange("fr")}>
             Français
           </button>
         </div>
@@ -54,12 +46,16 @@ export default function GoHome() {
           <ul className="nav nav-tabs">
             <li className="nav-item">
               <NavLink to="" activeclassname="active" className="nav-link">
-                Home
+                {language === "en" && `Home`}
+                {language === "de" && `Homepage`}
+                {language === "fr" && `Accueil`}
               </NavLink>
             </li>
             <li>
               <NavLink to="/menu" activeclassname="active" className="nav-link">
-                Menu
+                {language === "en" && `Menu`}
+                {language === "de" && `Speisekarte`}
+                {language === "fr" && `Menu`}
               </NavLink>
             </li>
             <li>
@@ -100,10 +96,20 @@ export default function GoHome() {
         )}
       </div>
       <Routes>
-        <Route path="/menu" element={<GoMenu language={language} />} />
+        <Route
+          path="/menu"
+          element={
+            <GoMenu language={language} onLanguageChange={onLanguageChange} />
+          }
+        />
         <Route
           path="/visit-the-cafe"
-          element={<Visit_the_Cafe language={language} />}
+          element={
+            <Visit_the_Cafe
+              language={language}
+              onLanguageChange={onLanguageChange}
+            />
+          }
         />
       </Routes>
     </>

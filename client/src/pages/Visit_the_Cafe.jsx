@@ -4,27 +4,18 @@ import GoMenu from "./GoMenu";
 import GoHome from "./GoHome";
 import "./Pages.css";
 
-export default function Visit_the_Cafe() {
-  const [language, setLanguage] = useState("en");
-
-  const handleLanguageChange = (lang) => {
-    setLanguage(lang);
-  };
-
+export default function Visit_the_Cafe({ language, onLanguageChange }) {
   return (
     <>
       <div className="top">
         <div className="lang-buttons">
-          <button className="german" onClick={() => handleLanguageChange("de")}>
+          <button className="german" onClick={() => onLanguageChange("de")}>
             Deutsch
           </button>
-          <button
-            className="english"
-            onClick={() => handleLanguageChange("en")}
-          >
+          <button className="english" onClick={() => onLanguageChange("en")}>
             English
           </button>
-          <button className="french" onClick={() => handleLanguageChange("fr")}>
+          <button className="french" onClick={() => onLanguageChange("fr")}>
             Français
           </button>
         </div>
@@ -33,12 +24,16 @@ export default function Visit_the_Cafe() {
           <ul className="nav nav-tabs">
             <li className="nav-item">
               <NavLink to="/" activeclassname="active" className="nav-link">
-                Home
+                {language === "en" && `Home`}
+                {language === "de" && `Homepage`}
+                {language === "fr" && `Accueil`}
               </NavLink>
             </li>
             <li>
               <NavLink to="/menu" activeclassname="active" className="nav-link">
-                Menu
+                {language === "en" && `Menu`}
+                {language === "de" && `Speisekarte`}
+                {language === "fr" && `Menu`}
               </NavLink>
             </li>
             <li>
