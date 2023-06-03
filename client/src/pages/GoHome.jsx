@@ -73,7 +73,11 @@ export default function GoHome({ language, onLanguageChange }) {
         </nav>
       </div>
       <div className="below">
-        <h2>Choc of the Month</h2>
+        <h2>
+          {language === "en" && `Choc of the Month`}
+          {language === "de" && `Schoko des Monats`}
+          {language === "fr" && `Chocolat du Mois`}
+        </h2>
         {isLoading ? (
           <div className="card">
             <div className="card-body">
