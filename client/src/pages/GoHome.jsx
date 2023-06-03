@@ -86,11 +86,23 @@ export default function GoHome({ language, onLanguageChange }) {
               style={{ marginBottom: "2%" }}
               className="card-img-top"
               src={`${chocomo.image_source}`}
-              alt={`${chocomo.item_name}`}
+              alt={
+                (language === "en" && `${chocomo.item_name}`) ||
+                (language === "de" && `${chocomo.item_name_GER}`) ||
+                (language === "fr" && `${chocomo.item_name_FR}`)
+              }
             />
             <div className="card-body">
-              <h6 className="card-title">{`${chocomo.item_name}`}</h6>
-              <p className="card-text">{`${chocomo.description}`}</p>
+              <h6 className="card-title">
+                {(language === "en" && `${chocomo.item_name}`) ||
+                  (language === "de" && `${chocomo.item_name_GER}`) ||
+                  (language === "fr" && `${chocomo.item_name_FR}`)}
+              </h6>
+              <p className="card-text">
+                {(language === "en" && `${chocomo.description}`) ||
+                  (language === "de" && `${chocomo.description_GER}`) ||
+                  (language === "fr" && `${chocomo.description_FR}`)}
+              </p>
             </div>
           </div>
         )}
