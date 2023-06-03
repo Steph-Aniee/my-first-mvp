@@ -25,6 +25,11 @@ body {
   color: rgba(228, 187, 150, 0.9);
 }
 
+.german:active {
+  transform: scale(0.95);
+  background-color: rgba(228, 187, 150, 0.5);
+}
+
 .english {
   border: none;
   background-color: transparent;
@@ -35,6 +40,11 @@ body {
   color: rgba(228, 187, 150, 0.9);
 }
 
+.english:active {
+  transform: scale(0.95);
+  background-color: rgba(228, 187, 150, 0.5);
+}
+
 .french {
   border: none;
   background-color: transparent;
@@ -43,6 +53,11 @@ body {
   font-weight: 400;
   font-size: 16px;
   color: rgba(228, 187, 150, 0.9);
+}
+
+.french:active {
+  transform: scale(0.95);
+  background-color: rgba(228, 187, 150, 0.5);
 }
 
 h1 {
