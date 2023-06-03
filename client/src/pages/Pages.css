@@ -128,7 +128,7 @@ h2 {
 
 .card {
   width: 40%;
-  color: #7b3f00;
+  color: #2c1700;
   background-color: rgb(228, 187, 150);
   border: transparent;
   font-family: "Montserrat", sans-serif;
@@ -155,6 +155,56 @@ div.card-body {
 @media (min-width: 1200px) {
   .below h2 {
     margin: 0 2% 2% 1%;
+  }
+}
+
+/* GoMenu Styles */
+.menu {
+  display: flex;
+  flex-flow: row wrap;
+  justify-items: center;
+  justify-self: center;
+  color: #2c1700;
+  justify-content: center;
+}
+
+.menuItem {
+  margin: 2rem;
+  width: 100%;
+}
+
+.menu table {
+  justify-content: center;
+}
+
+.menu th {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.menu td {
+  width: 20rem;
+}
+
+.price {
+  width: 7em;
+}
+
+@media (max-width: 450px) {
+  .menu {
+    font-size: 12px;
+  }
+  .menu th {
+    white-space: pre-wrap;
+  }
+
+  .menu td {
+    padding: 0;
+    height: 90px;
+  }
+
+  .menuHead {
+    margin-bottom: 0;
   }
 }
 

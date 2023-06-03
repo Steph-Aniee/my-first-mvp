@@ -48,7 +48,7 @@ export default function Delete_Item() {
   };
 
   return (
-    <div lassName="adminArea">
+    <div className="adminArea">
       <div className="deleteArea">
         <h1 className="addHeadline">Delete Item</h1>
         {item.length < 1 ? (

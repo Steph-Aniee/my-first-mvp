@@ -149,23 +149,6 @@ export default function GoHome({ language, onLanguageChange }) {
           </div>
         )}
       </div>
-      <Routes>
-        <Route
-          path="/menu"
-          element={
-            <GoMenu language={language} onLanguageChange={onLanguageChange} />
-          }
-        />
-        <Route
-          path="/visit-the-cafe"
-          element={
-            <Visit_the_Cafe
-              language={language}
-              onLanguageChange={onLanguageChange}
-            />
-          }
-        />
-      </Routes>
     </>
   );
 }
