@@ -133,10 +133,49 @@ div.card-body {
 
 .aboutPage {
   display: flex;
-  margin: 2% 20%;
+  margin: 1em 10%;
   text-align: justify;
   color: #7b3f00;
   font-weight: 450;
+  flex-flow: row wrap;
+}
+
+.welcome {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.aboutPage h6 {
+  display: flex;
+  font-size: large;
+  margin-top: 5%;
+  width: 100%;
+}
+
+.cafeImage {
+  display: flex;
+  justify-content: center;
+  margin: 2% auto 5% auto;
+  height: 30em;
+}
+
+@media (max-width: 450px) {
+  .cafeImage {
+    max-height: 300px;
+  }
+  .aboutPage h6 {
+    font-size: 15px;
+  }
+}
+
+.linkStyle {
+  color: #b1571b;
+  text-decoration: none;
+}
+
+.linkStyle:hover {
+  color: #913c3c;
+  text-decoration: none;
 }
 
 /* for the admin-area*/

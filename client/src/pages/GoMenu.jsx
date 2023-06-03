@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Visit_the_Cafe from "./Visit_the_Cafe";
-import GoHome from "./GoHome";
 
 export default function GoMenu({ language, onLanguageChange }) {
   return (

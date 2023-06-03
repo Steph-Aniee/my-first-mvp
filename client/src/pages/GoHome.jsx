@@ -78,7 +78,7 @@ export default function GoHome({ language, onLanguageChange }) {
           {language === "de" && `Schoko des Monats`}
           {language === "fr" && `Chocolat du Mois`}
         </h2>
-        {isLoading ? (
+        {isLoading ? ( // need this part so that there is some time to fetch the data before the code and page breaks
           <div className="card">
             <div className="card-body">
               <h6 className="card-title">...Loading</h6>
