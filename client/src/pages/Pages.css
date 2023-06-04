@@ -6,7 +6,8 @@
 }
 
 body {
-  background-color: rgb(228, 187, 150);
+  /*  background-color: rgb(228, 187, 150); */
+  background-color: #ffffff; /* needs to be white for admin-area no tto look weird */
 }
 
 .lang-buttons {
@@ -133,7 +134,7 @@ h2 {
   border: transparent;
   font-family: "Montserrat", sans-serif;
   text-align: justify;
-  margin-bottom: 5%;
+  padding-bottom: 2%;
 }
 
 img.card-img-top {
@@ -166,10 +167,11 @@ div.card-body {
   justify-self: center;
   color: #2c1700;
   justify-content: center;
+  margin-left: 13rem; /* to balance out the wide price td/th that are mostly empty but difficult to make smaller on their own */
 }
 
 .menuItem {
-  margin: 2rem;
+  margin: 1rem;
   width: 100%;
 }
 
@@ -183,11 +185,16 @@ div.card-body {
 }
 
 .menu td {
-  width: 20rem;
+  width: 20rem; /* also to help balance out things by making them all same length, so that no weird spaces and gaps */
 }
 
-.price {
+/* span.price {
   width: 7em;
+} */
+
+td,
+th {
+  padding: 1rem;
 }
 
 @media (max-width: 450px) {
@@ -212,7 +219,7 @@ div.card-body {
 
 .aboutPage {
   display: flex;
-  margin: 1em 10%;
+  margin: 0 10%;
   text-align: justify;
   color: #7b3f00;
   font-weight: 450;

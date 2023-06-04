@@ -361,7 +361,7 @@ export default function Edit_Item() {
         <Link to="/admin">
           <button
             style={{
-              margin: "2% auto 80% 2%",
+              margin: "2% auto 10% 2%",
               justifyContent: "center",
               backgroundColor: "#e9c2d1",
             }}

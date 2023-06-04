@@ -281,7 +281,7 @@ export default function Add_Item() {
       <Link to="/admin">
         <button
           style={{
-            margin: "2% auto 40% 2%",
+            margin: "2% auto 10% 2%",
             justifyContent: "center",
             backgroundColor: "#e9c2d1",
           }}

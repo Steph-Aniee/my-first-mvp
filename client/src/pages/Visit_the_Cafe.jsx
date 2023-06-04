@@ -305,14 +305,13 @@ export default function Visit_the_Cafe({ language, onLanguageChange }) {
               Nous avons hâte de vous accueillir et de partager avec vous la
               magie de Mademoiselle Chocoholic. Préparez-vous à vous rendre à la
               tentation sucrée!{" "}
-              <p>
-                <br></br>
-                <i>
-                  Veuillez noter que l'adresse, l'e-mail et les autres détails
-                  mentionnés ci-dessus sont fictifs et fournis uniquement à des
-                  fins d'illustration.
-                </i>
-              </p>
+            </p>
+            <p>
+              <i>
+                Veuillez noter que l'adresse, l'e-mail et les autres détails
+                mentionnés ci-dessus sont fictifs et fournis uniquement à des
+                fins d'illustration.
+              </i>
             </p>
           </div>
         )}

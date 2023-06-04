@@ -138,13 +138,14 @@ export default function GoMenu({ language, onLanguageChange }) {
                       {language === "de" && `Zutaten`}
                       {language === "fr" && `Ingrédients`}
                     </th>
-                    <div className="price">
-                      <th>
+
+                    <th>
+                      <span className="price">
                         {language === "en" && `Price`}
                         {language === "de" && `Preis`}
                         {language === "fr" && `Prix`}
-                      </th>
-                    </div>
+                      </span>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -152,9 +153,10 @@ export default function GoMenu({ language, onLanguageChange }) {
                     <tr key={item.id}>
                       <td>{getItemName(item)}</td>
                       <td>{getIngredients(item)}</td>
-                      <div className="price">
-                        <td>{item.price.toFixed(2)} €</td>
-                      </div>
+
+                      <td>
+                        <span className="price">{item.price.toFixed(2)} €</span>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -183,14 +185,15 @@ export default function GoMenu({ language, onLanguageChange }) {
                       {language === "de" && `Zutaten`}
                       {language === "fr" && `Ingrédients`}
                     </th>
-                    <div className="price">
-                      <th>
+
+                    <th>
+                      <span className="price">
                         {" "}
                         {language === "en" && `Price`}
                         {language === "de" && `Preis`}
                         {language === "fr" && `Prix`}
-                      </th>
-                    </div>
+                      </span>{" "}
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -198,9 +201,10 @@ export default function GoMenu({ language, onLanguageChange }) {
                     <tr key={item.id}>
                       <td>{getItemName(item)}</td>
                       <td>{getIngredients(item)}</td>
-                      <div className="price">
-                        <td>{item.price.toFixed(2)} €</td>
-                      </div>
+
+                      <td>
+                        <span className="price">{item.price.toFixed(2)} €</span>{" "}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -229,14 +233,14 @@ export default function GoMenu({ language, onLanguageChange }) {
                       {language === "de" && `Zutaten`}
                       {language === "fr" && `Ingrédients`}
                     </th>
-                    <div className="price">
-                      <th>
-                        {" "}
+
+                    <th>
+                      <span className="price">
                         {language === "en" && `Price`}
                         {language === "de" && `Preis`}
                         {language === "fr" && `Prix`}
-                      </th>
-                    </div>
+                      </span>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -244,9 +248,10 @@ export default function GoMenu({ language, onLanguageChange }) {
                     <tr key={item.id}>
                       <td>{getItemName(item)}</td>
                       <td>{getIngredients(item)}</td>
-                      <div className="price">
-                        <td>{item.price.toFixed(2)} €</td>
-                      </div>
+
+                      <td>
+                        <span className="price">{item.price.toFixed(2)} €</span>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -275,15 +280,13 @@ export default function GoMenu({ language, onLanguageChange }) {
                       {language === "de" && `Zutaten`}
                       {language === "fr" && `Ingrédients`}
                     </th>
-                    <div className="price">
-                      {" "}
-                      <th>
-                        {" "}
+                    <th>
+                      <span className="price">
                         {language === "en" && `Price`}
                         {language === "de" && `Preis`}
                         {language === "fr" && `Prix`}
-                      </th>
-                    </div>
+                      </span>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -291,9 +294,10 @@ export default function GoMenu({ language, onLanguageChange }) {
                     <tr key={item.id}>
                       <td>{getItemName(item)}</td>
                       <td>{getIngredients(item)}</td>
-                      <div className="price">
-                        <td>{item.price.toFixed(2)} €</td>
-                      </div>
+
+                      <td>
+                        <span className="price">{item.price.toFixed(2)} €</span>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -324,14 +328,14 @@ export default function GoMenu({ language, onLanguageChange }) {
                       {language === "de" && `Zutaten`}
                       {language === "fr" && `Ingrédients`}
                     </th>
-                    <div className="price">
-                      <th>
-                        {" "}
+
+                    <th>
+                      <span className="price">
                         {language === "en" && `Price`}
                         {language === "de" && `Preis`}
                         {language === "fr" && `Prix`}
-                      </th>
-                    </div>
+                      </span>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -339,9 +343,12 @@ export default function GoMenu({ language, onLanguageChange }) {
                     <tr key={item.id}>
                       <td>{getItemName(item)}</td>
                       <td>{getIngredients(item)}</td>
-                      <div className="price">
-                        <td>{item.price.toFixed(2)} €</td>
-                      </div>
+
+                      <td>
+                        <span className="price">
+                          {item.price.toFixed(2)} €{" "}
+                        </span>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
