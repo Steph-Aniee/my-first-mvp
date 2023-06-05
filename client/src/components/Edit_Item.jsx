@@ -112,7 +112,7 @@ export default function Edit_Item() {
     } catch (error) {
       console.error(error);
       alert(
-        "Failed to update item! Please check for single-apostrophes in French text."
+        "Failed to update item! Please check the date format or for single-apostrophes in the French text."
       );
     }
   };
