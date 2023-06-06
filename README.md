@@ -1,4 +1,4 @@
-# My First MVP (Minimal Viable Product)
+# My First MVP (Minimum Viable Product)
 
 Mademoiselle Chocoholic's Website
 
