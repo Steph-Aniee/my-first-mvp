@@ -83,6 +83,14 @@ First, Mademoiselle Chocoholic has to input the ID of the item she wants to edit
 
 Works similarily as the Edit page: First, the café owner has to input the ID of the item she wishes to remove from the menu. Then Mademoiselle Chocoholic will be asked if she is sure that she wants to delete the following menu item (incl. the item ID and name in English). Finally, the item will be removed from the inventory/menu. If the item with the given ID does not exist, a pop-up message will let Mademoiselle Chocoholic know.
 
+## Future Features
+
+- Not a feature but prettier: Export the whole top area (navbar + name and logo, as well as language buttons) as two separate components
+- Secure admin-login
+- It would be nice to be able to upload images to the database instead of using third-party URLs.
+- In the future, this app should be able to manage reservations for Sunday brunch and have an online shop for home-made chocolate bars.
+- A contact form with (ideally) embedded Google Maps or other maps API to find the café.
+
 ## Installation
 
 To install and run this MVP locally, follow these steps:
@@ -124,7 +132,9 @@ Contributions are welcome! To contribute to my MVP, follow these steps:
 ## Acknowledgements
 
 - Vite + React
+- Bootstrap
 - Node.js
 - Express.js
 - MySQL
 - ChatGPT (for creating all the content, such as the text on the 'Visit the Café' page and the whole menu in three languages)
+- Craiyon & Paint 3D to create the mug-logo
