@@ -10,24 +10,24 @@ export default function GoHome({ language, onLanguageChange }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const fetchChocomo = async () => {
+      try {
+        const response = await fetch("/api/menu");
+        if (!response.ok) {
+          throw new Error("Request failed");
+        }
+        const data = await response.json();
+
+        const isChoc = data.filter((e) => e.isChocOfMonth === 1);
+        setChocomo(isChoc[0]);
+        setIsLoading(false);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
     fetchChocomo();
   }, []);
-
-  const fetchChocomo = async () => {
-    try {
-      const response = await fetch("/api/menu");
-      if (!response.ok) {
-        throw new Error("Request failed");
-      }
-      const data = await response.json();
-
-      const isChoc = data.filter((e) => e.isChocOfMonth === 1);
-      setChocomo(isChoc[0]);
-      setIsLoading(false);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   const addLink = (text) => {
     const linkTexts = {
