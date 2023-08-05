@@ -1,9 +1,6 @@
-import { ReactFragment } from "react";
 import React from "react";
 import { useEffect, useState } from "react";
 import { Routes, Route, Link, NavLink } from "react-router-dom";
-import Visit_the_Cafe from "./Visit_the_Cafe";
-import GoMenu from "./GoMenu";
 
 export default function GoHome({ language, onLanguageChange }) {
   const [chocomo, setChocomo] = useState({});
