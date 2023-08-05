@@ -2,9 +2,6 @@ import { ReactFragment } from "react";
 import React from "react";
 import { useEffect, useState } from "react";
 import { Routes, Route, Link, NavLink } from "react-router-dom";
-import Visit_the_Cafe from "./Visit_the_Cafe";
-import GoMenu from "./GoMenu";
-import mad_choc_logo from "../assets/mad_choc_logo.png";
 
 export default function GoHome({ language, onLanguageChange }) {
   const [chocomo, setChocomo] = useState({});
@@ -68,17 +65,15 @@ export default function GoHome({ language, onLanguageChange }) {
           </button>
         </div>
         <h1>
-          {mad_choc_logo && (
-            <img
-              className="logo"
-              style={{ transform: "scaleX(-1)" }}
-              src=".\src\assets\mad_choc_logo.png"
-            />
-          )}
+          {/*           <img
+            className="logo"
+            style={{ transform: "scaleX(-1)" }}
+            src="./src/assets/mad_choc_logo.png"
+          /> */}
           Mademoiselle Chocoholic
-          {mad_choc_logo && (
+          {/*    {mad_choc_logo && (
             <img className="logo" src="./src/assets/mad_choc_logo.png" />
-          )}
+          )} */}
         </h1>
 
         <nav>

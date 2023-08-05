@@ -65,7 +65,7 @@ h1 {
   font-family: "Tangerine", cursive;
   font-style: normal;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 70px;
   line-height: 48px;
   display: flex;
   align-items: center;
@@ -258,6 +258,12 @@ th {
   }
   h1 {
     font-size: 24pt;
+  }
+}
+
+@media (max-width: 846px) {
+  h1 {
+    font-size: 36pt;
   }
 }
 
