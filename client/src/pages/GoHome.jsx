@@ -71,9 +71,8 @@ export default function GoHome({ language, onLanguageChange }) {
             src="./src/assets/mad_choc_logo.png"
           /> */}
           Mademoiselle Chocoholic
-          {/*    {mad_choc_logo && (
-            <img className="logo" src="./src/assets/mad_choc_logo.png" />
-          )} */}
+          {/* 
+            <img className="logo" src="./src/assets/mad_choc_logo.png" /> */}
         </h1>
 
         <nav>
