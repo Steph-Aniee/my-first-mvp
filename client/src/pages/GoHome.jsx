@@ -64,12 +64,12 @@ export default function GoHome({ language, onLanguageChange }) {
             Français
           </button>
         </div>
+        <img
+          className="logo"
+          style={{ transform: "scaleX(-1)" }}
+          src={process.env.PUBLIC_URL + "/mad_choc_logo.png"}
+        />
         <h1>
-          <img
-            className="logo"
-            style={{ transform: "scaleX(-1)" }}
-            src={process.env.PUBLIC_URL + "/mad_choc_logo.png"}
-          />
           Mademoiselle Chocoholic
           <img
             className="logo"
