@@ -65,14 +65,16 @@ export default function GoHome({ language, onLanguageChange }) {
           </button>
         </div>
         <h1>
-          {/*           <img
+          <img
             className="logo"
             style={{ transform: "scaleX(-1)" }}
-            src="./src/assets/mad_choc_logo.png"
-          /> */}
+            src={process.env.PUBLIC_URL + "/mad_choc_logo.png"}
+          />
           Mademoiselle Chocoholic
-          {/* 
-            <img className="logo" src="./src/assets/mad_choc_logo.png" /> */}
+          <img
+            className="logo"
+            src={process.env.PUBLIC_URL + "/mad_choc_logo.png"}
+          />
         </h1>
 
         <nav>
