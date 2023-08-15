@@ -18,13 +18,13 @@ export default function Visit_the_Cafe({ language, onLanguageChange }) {
           </button>
         </div>
         <h1>
-          {/*           <img
+          <img
             className="logo"
             style={{ transform: "scaleX(-1)" }}
-            src=".\src\assets\mad_choc_logo.png"
-          /> */}
+            src="/mad_choc_logo.png"
+          />
           Mademoiselle Chocoholic
-          {/*      <img className="logo" src=".\src\assets\mad_choc_logo.png" /> */}
+          <img className="logo" src="/mad_choc_logo.png" />
         </h1>
         <nav>
           <ul className="nav nav-tabs">
